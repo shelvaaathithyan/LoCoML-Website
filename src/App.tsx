@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from '@/components/navigation/Navbar';
-import { Footer } from '@/components/navigation/Footer';
 import { Background } from '@/components/common/Background';
 import { ResponsiveHelper } from '@/components/common/ResponsiveHelper';
 import { Playground } from '@/pages/Playground';
@@ -9,7 +8,8 @@ import { Hero } from '@/components/sections/Hero';
 import { WhySection } from '@/components/sections/why/WhySection';
 import { ArchitectureSection } from '@/components/sections/architecture/ArchitectureSection';
 import { CapabilitiesSection } from '@/components/sections/capabilities/CapabilitiesSection';
-import { CommitmentSection } from '@/components/sections/commitment/CommitmentSection';
+import { CTASection } from '@/components/sections/cta/CTASection';
+import { Footer } from '@/components/layout/Footer';
 
 function Home() {
   return (
@@ -18,7 +18,7 @@ function Home() {
       <WhySection />
       <ArchitectureSection />
       <CapabilitiesSection />
-      <CommitmentSection />
+      <CTASection />
     </>
   );
 }
