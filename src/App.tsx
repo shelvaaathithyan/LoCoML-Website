@@ -9,6 +9,7 @@ import { Hero } from '@/components/sections/Hero';
 import { WhySection } from '@/components/sections/why/WhySection';
 import { ArchitectureSection } from '@/components/sections/architecture/ArchitectureSection';
 import { CapabilitiesSection } from '@/components/sections/capabilities/CapabilitiesSection';
+import { CommitmentSection } from '@/components/sections/commitment/CommitmentSection';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <WhySection />
       <ArchitectureSection />
       <CapabilitiesSection />
+      <CommitmentSection />
     </>
   );
 }
