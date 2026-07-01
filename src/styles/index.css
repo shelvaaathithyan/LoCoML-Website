@@ -103,7 +103,7 @@
 
 @layer utilities {
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 10s ease-in-out infinite;
   }
   
   .animate-pulse-subtle {
@@ -115,7 +115,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-8px);
+      transform: translateY(-4px);
     }
   }
 

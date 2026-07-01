@@ -50,7 +50,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse-subtle" />
             
             <FadeIn delay={0.5}>
-              <div className="relative mx-auto w-full max-w-2xl rounded-3xl border border-white/40 bg-white/60 backdrop-blur-md p-2 shadow-[0_0_60px_-15px_rgba(37,99,235,0.15)] animate-float">
+              <div className="group relative mx-auto w-full max-w-2xl rounded-3xl border border-white/40 bg-white/60 backdrop-blur-md p-2 shadow-[0_0_60px_-15px_rgba(37,99,235,0.15)] animate-float hover:border-primary/20 transition-colors duration-500">
                 <div className="mb-2 flex items-center justify-between px-3 pt-2">
                   <span className="font-mono text-[11px] uppercase tracking-wider font-semibold text-slate-500 flex items-center gap-2">
                     <Icons.Monitor className="h-3 w-3 text-primary/80" /> Product Preview
@@ -60,6 +60,9 @@ export function Hero() {
                 <ResponsiveVideo 
                   src="" 
                   poster=""
+                  autoPlay={true}
+                  loop={true}
+                  muted={true}
                   aspectRatio="16/9" 
                   rounded="2xl" 
                   className="w-full border border-slate-100 bg-white"
