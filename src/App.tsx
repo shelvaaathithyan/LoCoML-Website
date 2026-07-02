@@ -5,6 +5,7 @@ import { ResponsiveHelper } from '@/components/common/ResponsiveHelper';
 import { ScrollToTop } from '@/components/common/ScrollToTop';
 import { Playground } from '@/pages/Playground';
 import { Platform } from '@/pages/Platform';
+import { Research } from '@/pages/Research';
 
 import { Hero } from '@/components/sections/Hero';
 import { WhySection } from '@/components/sections/why/WhySection';
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/platform" element={<Platform />} />
+          <Route path="/research" element={<Research />} />
           <Route path="/internal/playground" element={<Playground />} />
           {/* Other routes will be implemented in subsequent phases */}
           <Route path="*" element={<Home />} />
