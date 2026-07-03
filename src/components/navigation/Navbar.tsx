@@ -8,7 +8,7 @@ const links = [
   { name: 'Home', path: '/' },
   { name: 'Platform', path: '/platform' },
   { name: 'Research', path: '/research' },
-  { name: 'Documentation', path: '/docs' },
+  { name: 'Use Cases', path: '/use-cases' },
   { name: 'About', path: '/about' },
 ];
 

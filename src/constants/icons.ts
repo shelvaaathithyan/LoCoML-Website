@@ -22,7 +22,13 @@ import {
   Zap,
   Monitor,
   ChevronDown,
-  ArrowDown
+  ArrowDown,
+  HeartPulse,
+  Coins,
+  ShoppingCart,
+  Factory,
+  Sprout,
+  Building2,
 } from 'lucide-react';
 
 export const Icons = {
@@ -50,4 +56,10 @@ export const Icons = {
   Monitor,
   ChevronDown,
   ArrowDown,
+  HeartPulse,
+  Coins,
+  ShoppingCart,
+  Factory,
+  Sprout,
+  Building2,
 };

@@ -22,7 +22,7 @@ export function Footer() {
             <h4 className="mb-4 font-heading font-semibold text-heading">Platform</h4>
             <ul className="space-y-2 text-sm text-paragraph">
               <li><Link to="/platform" className="hover:text-primary transition-colors">Features</Link></li>
-              <li><Link to="/docs" className="hover:text-primary transition-colors">Documentation</Link></li>
+              <li><Link to="/use-cases" className="hover:text-primary transition-colors">Use Cases</Link></li>
             </ul>
           </div>
 
