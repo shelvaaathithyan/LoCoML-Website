@@ -1,74 +1,56 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '@/components/layout/Layout';
 
 export function AboutEpilogue() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-  };
-
   return (
-    <section className="relative pt-[120px] pb-[140px] bg-white overflow-hidden border-t border-slate-100">
-      <Container className="relative z-10 w-full flex flex-col items-center text-center">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="flex flex-col items-center w-full max-w-[800px] mx-auto"
-        >
-          {/* Main Statement */}
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-8 leading-tight tracking-tight"
+    <section className="relative w-full pt-[160px] pb-[80px] bg-white overflow-hidden">
+      <Container className="relative z-10 flex flex-col items-center justify-center text-center max-w-[700px]">
+        
+        <div className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[44px] font-bold leading-[1.05] tracking-[-0.03em] w-full text-center">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-slate-400 block w-full"
           >
-            Advancing Machine Learning,<br className="hidden sm:block" />
-            One Semantic Workflow at a Time.
-          </motion.h2>
-
-          {/* Supporting Statement */}
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-[640px] mx-auto mb-14"
-          >
-            LoCoML continues to evolve through research,<br className="hidden sm:block" />
-            engineering, and collaboration,<br className="hidden sm:block" />
-            building the next generation of intelligent machine learning systems.
-          </motion.p>
-
-          {/* Thin Divider */}
-          <motion.div 
-            variants={itemVariants}
-            className="w-[200px] h-[1px] bg-slate-200 mb-14"
-          />
-
-          {/* Institutional Attribution */}
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col items-center text-slate-500 leading-[1.6]"
-          >
-            <span className="text-sm font-medium tracking-wide mb-1">
-              Developed at
-            </span>
-            <span className="text-base font-semibold text-slate-700">
-              Software Engineering Research Centre (SERC)
-            </span>
-            <span className="text-sm text-slate-600">
-              IIIT Hyderabad
-            </span>
+            Building the future.
           </motion.div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            className="text-slate-400 block w-full"
+          >
+            Advancing research.
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            className="text-slate-400 block w-full"
+          >
+            Empowering intelligence.
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, delay: 0.45, ease: "easeOut" }}
+            className="text-primary font-extrabold mt-8 block w-full leading-[1.12]"
+          >
+            Driven by research.<br className="hidden sm:block" />
+            Built by people.
+          </motion.div>
+          
+        </div>
+        
       </Container>
     </section>
   );
