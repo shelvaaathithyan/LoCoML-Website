@@ -6,7 +6,7 @@ import { FadeUp, Slide, StaggerContainer } from '@/components/animations/Animati
 
 export function FeaturedPublication() {
   return (
-    <section className="relative w-full py-[120px] bg-white overflow-hidden">
+    <section className="relative w-full pt-[120px] pb-[60px] bg-white overflow-hidden">
       <Container className="relative z-10">
         
         {/* Section Header */}
