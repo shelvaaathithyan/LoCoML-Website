@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/Button';
@@ -9,6 +10,7 @@ import { Tag } from '@/components/ui/TypographyAndBadges';
 import { cn } from '@/utils/cn';
 
 export function Hero() {
+  const navigate = useNavigate();
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   // Handle scroll lock
@@ -56,7 +58,7 @@ export function Hero() {
               <Button size="xl" className="w-full sm:w-auto font-medium hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/20 transition-all">
                 Explore Platform
               </Button>
-              <Button size="xl" variant="outline" className="w-full sm:w-auto font-medium hover:-translate-y-0.5 hover:bg-slate-50 transition-all">
+              <Button size="xl" variant="outline" onClick={() => navigate('/research')} className="w-full sm:w-auto font-medium hover:-translate-y-0.5 hover:bg-slate-50 transition-all">
                 Read Research <Icons.ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </FadeUp>
