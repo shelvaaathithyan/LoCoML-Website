@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Icons } from '@/constants/icons';
 import { cn } from '@/utils/cn';
 import { Button } from '@/components/ui/Button';
+import { Logo } from '@/components/common/Logo';
 
 const links = [
   { name: 'Home', path: '/' },
@@ -52,13 +53,7 @@ export function Navbar() {
       )}
     >
       <div className="relative mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-8">
-        <Link to="/" className="flex items-center gap-2 relative z-10">
-          {/* Logo Placeholder */}
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
-            <Icons.Layers className="h-5 w-5" />
-          </div>
-          <span className="font-heading text-xl font-bold text-heading">LoCoML</span>
-        </Link>
+        <Logo />
 
         {/* Desktop Navigation - Centered */}
         <nav className="hidden md:flex absolute inset-x-0 items-center justify-center gap-8 pointer-events-none">

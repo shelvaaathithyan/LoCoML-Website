@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Icons } from '@/constants/icons';
+import { Logo } from '@/components/common/Logo';
 
 export function Footer() {
   return (
@@ -7,13 +8,8 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="flex flex-col space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
-                <Icons.Layers className="h-5 w-5" />
-              </div>
-              <span className="font-heading text-xl font-bold text-heading">LoCoML</span>
-            </Link>
-            <p className="text-sm text-paragraph max-w-xs">
+            <Logo />
+            <p className="text-sm text-paragraph max-w-xs mt-2">
               Engineering the next generation of scalable machine learning architecture.
             </p>
           </div>
