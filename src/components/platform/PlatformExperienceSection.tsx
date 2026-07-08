@@ -7,15 +7,15 @@ import { ResponsiveVideo } from '@/components/common/ResponsiveVideo';
 import { cn } from '@/utils/cn';
 
 const SHOWCASE_ITEMS = [
-  { id: 'auth', num: '01', title: 'Login / Signup', duration: '0:32', description: 'Secure login and seamless account creation.', video: '/Videos/LoginSignup.mp4' },
-  { id: 'resolver', num: '02', title: 'Resolver Workstation', duration: '0:45', description: 'Repair structural and semantic failures interactively.', video: '/Videos/Resolver Workstation.mp4' },
-  { id: 'stress', num: '03', title: 'Stress Testing', duration: '0:41', description: 'Subject models to intense synthetic load to verify stability.', video: '/Videos/Stress Testing.mp4' },
-  { id: 'portability', num: '04', title: 'Pipeline Portability', duration: '0:56', description: 'Export and deploy pipelines across diverse cloud environments.', video: '/Videos/Pipeline Portability.mp4' },
-  { id: 'stitch', num: '05', title: 'Stitch Models', duration: '1:08', description: 'Combine multiple models to improve prediction quality.', video: '/Videos/Stitch Model.mp4' },
-  { id: 'routing', num: '06', title: 'Adaptive Routing', duration: '0:38', description: 'Redirects execution to better-performing models dynamically.', video: '/Videos/Adaptive Routing.mp4' },
-  { id: 'dashboard', num: '07', title: 'Pipeline Dashboard', duration: '1:12', description: 'Real-time telemetry and execution monitoring for pipelines.', video: '/Videos/Pipeline Dashboard.mp4' },
+  { id: 'auth', num: '01', title: 'Login / Signup', duration: '0:25', description: 'Secure login and seamless account creation.', video: '/Videos/LoginSignup.mp4' },
+  { id: 'resolver', num: '02', title: 'Resolver Workstation', duration: '0:23', description: 'Repair structural and semantic failures interactively.', video: '/Videos/Resolver Workstation.mp4' },
+  { id: 'stress', num: '03', title: 'Stress Testing', duration: '0:17', description: 'Subject models to intense synthetic load to verify stability.', video: '/Videos/Stress Testing.mp4' },
+  { id: 'portability', num: '04', title: 'Pipeline Portability', duration: '0:22', description: 'Export and deploy pipelines across diverse cloud environments.', video: '/Videos/Pipeline Portability.mp4' },
+  { id: 'stitch', num: '05', title: 'Stitch Models', duration: '0:20', description: 'Combine multiple models to improve prediction quality.', video: '/Videos/Stitch Model.mp4' },
+  { id: 'routing', num: '06', title: 'Adaptive Routing', duration: '0:10', description: 'Redirects execution to better-performing models dynamically.', video: '/Videos/Adaptive Routing.mp4' },
+  { id: 'dashboard', num: '07', title: 'Pipeline Dashboard', duration: '0:09', description: 'Real-time telemetry and execution monitoring for pipelines.', video: '/Videos/Pipeline Dashboard.mp4' },
   { id: 'inference', num: '08', title: 'Data Processing', duration: '0:50', description: 'Test individual inputs against deployed models instantly.', video: '/Videos/Data Processing.mp4' },
-  { id: 'management', num: '09', title: 'Model Training', duration: '0:44', description: 'Safely decommission and archive models from the registry.', video: '/Videos/Model Training.mp4' }
+  { id: 'management', num: '09', title: 'Model Training', duration: '1:11', description: 'Safely decommission and archive models from the registry.', video: '/Videos/Model Training.mp4' }
 ];
 
 export function PlatformExperienceSection() {
@@ -228,15 +228,7 @@ export function PlatformExperienceSection() {
                   )}
                 </div>
 
-                {/* Modal Footer */}
-                <div className="mt-auto pt-[24px] flex flex-col md:flex-row md:items-center justify-between gap-4 flex-shrink-0">
-                  <div className="px-3 py-1.5 rounded-md bg-slate-50 border border-slate-100 text-[12px] font-mono text-slate-500 w-fit">
-                    {selectedItem.duration}
-                  </div>
-                  <p className="text-[14px] text-slate-500 md:text-right">
-                    {selectedItem.description}
-                  </p>
-                </div>
+
               </motion.div>
             </motion.div>
           </div>
