@@ -26,12 +26,8 @@ export function ResponsiveVideo({
   // Process src for GitHub Pages compatibility
   const resolvedSrc = src?.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}` : src;
 
-  // Handle video lifecycle (load when src changes, pause when unmounting)
+  // Clean up video memory when unmounting
   useEffect(() => {
-    if (videoRef.current && resolvedSrc) {
-      videoRef.current.load();
-    }
-    
     return () => {
       if (videoRef.current) {
         videoRef.current.pause();
@@ -39,7 +35,7 @@ export function ResponsiveVideo({
         videoRef.current.load();
       }
     };
-  }, [resolvedSrc]);
+  }, []);
 
   const aspectRatioClasses = {
     '16/9': 'aspect-video',
@@ -78,7 +74,6 @@ export function ResponsiveVideo({
         <video
           key={resolvedSrc}
           ref={videoRef}
-          src={resolvedSrc}
           poster={poster}
           autoPlay={autoPlay}
           muted={muted}
@@ -90,7 +85,9 @@ export function ResponsiveVideo({
             'h-full w-full object-cover transition-opacity duration-700 opacity-100'
           )}
           {...props}
-        />
+        >
+          <source src={resolvedSrc} type="video/mp4" />
+        </video>
       )}
     </div>
   );
