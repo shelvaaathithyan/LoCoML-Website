@@ -116,6 +116,7 @@ export function PlatformExperienceSection() {
                     <div className="absolute inset-0 bg-slate-900 opacity-0 group-hover:opacity-[0.05] transition-opacity duration-300 z-10 pointer-events-none" />
                     {item.video ? (
                       <ResponsiveVideo
+                        key={`grid-video-${item.id}`}
                         src={item.video}
                         poster=""
                         autoPlay={true}
@@ -209,6 +210,7 @@ export function PlatformExperienceSection() {
                 <div className="w-full h-auto aspect-video rounded-[18px] bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden flex-shrink-0 bg-slate-950">
                   {selectedItem.video ? (
                     <ResponsiveVideo
+                      key={`modal-video-${selectedItem.id}`}
                       src={selectedItem.video}
                       poster=""
                       autoPlay={true}

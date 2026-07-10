@@ -1,4 +1,4 @@
-import { VideoHTMLAttributes, useRef } from 'react';
+import { VideoHTMLAttributes, useRef, useEffect } from 'react';
 import { useInView } from 'framer-motion';
 import { cn } from '@/utils/cn';
 
@@ -20,7 +20,26 @@ export function ResponsiveVideo({
   ...props
 }: ResponsiveVideoProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "200px" });
+
+  // Process src for GitHub Pages compatibility
+  const resolvedSrc = src?.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}` : src;
+
+  // Handle video lifecycle (load when src changes, pause when unmounting)
+  useEffect(() => {
+    if (videoRef.current && resolvedSrc) {
+      videoRef.current.load();
+    }
+    
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+        videoRef.current.removeAttribute('src');
+        videoRef.current.load();
+      }
+    };
+  }, [resolvedSrc]);
 
   const aspectRatioClasses = {
     '16/9': 'aspect-video',
@@ -55,16 +74,18 @@ export function ResponsiveVideo({
         </div>
       )}
       
-      {src && isInView && (
+      {resolvedSrc && isInView && (
         <video
-          src={src}
+          key={resolvedSrc}
+          ref={videoRef}
+          src={resolvedSrc}
           poster={poster}
           autoPlay={autoPlay}
           muted={muted}
           loop={loop}
           controls={controls}
           playsInline // Crucial for iOS autoplay
-          preload="none"
+          preload="metadata"
           className={cn(
             'h-full w-full object-cover transition-opacity duration-700 opacity-100'
           )}
