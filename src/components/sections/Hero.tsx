@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/Button';
 import { ResponsiveVideo } from '@/components/common/ResponsiveVideo';
+import { GoogleDriveVideo } from '@/components/common/GoogleDriveVideo';
 import { FadeUp, FadeIn } from '@/components/animations/Animations';
 import { Icons } from '@/constants/icons';
 import { Tag } from '@/components/ui/TypographyAndBadges';
@@ -114,17 +115,9 @@ export function Hero() {
                   {/* The thumbnail representation */}
                   <div className="relative w-full aspect-video rounded-2xl border border-slate-100 overflow-hidden bg-slate-50/80">
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-50">
-                      <ResponsiveVideo 
-                        src={`${import.meta.env.BASE_URL}Videos/Screen Recording 2026-07-07 111202.mp4`} 
-                        poster=""
-                        autoPlay={true}
-                        loop={true}
-                        muted={true}
-                        controls={false}
-                        playsInline={true}
-                        aspectRatio="16/9" 
-                        rounded="none" 
-                        className="w-full h-full object-cover absolute inset-0 z-0 opacity-70"
+                      <GoogleDriveVideo 
+                        url="https://drive.google.com/file/d/1d27LFBSB0rcAyFFZELEbXFfiF2rd9_ae/preview"
+                        className="w-full h-full object-cover absolute inset-0 z-0 opacity-70 pointer-events-none"
                       />
                     </div>
                     
@@ -218,17 +211,8 @@ export function Hero() {
                 
                 {/* 16:9 Video Area */}
                 <div className="w-full h-full bg-slate-950 flex items-center justify-center overflow-hidden">
-                  <ResponsiveVideo 
-                    src={`${import.meta.env.BASE_URL}Videos/Screen Recording 2026-07-07 111202.mp4`} 
-                    poster=""
-                    autoPlay={true}
-                    loop={true}
-                    muted={false}
-                    controls={true}
-                    preload="metadata"
-                    playsInline={true}
-                    aspectRatio="16/9" 
-                    rounded="none" 
+                  <GoogleDriveVideo 
+                    url="https://drive.google.com/file/d/1d27LFBSB0rcAyFFZELEbXFfiF2rd9_ae/preview"
                     className="w-full h-full object-contain"
                   />
                 </div>

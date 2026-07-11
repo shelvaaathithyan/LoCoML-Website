@@ -4,6 +4,7 @@ import { X } from 'lucide-react';
 import { Container } from '@/components/layout/Layout';
 import { Tag } from '@/components/ui/TypographyAndBadges';
 import { ResponsiveVideo } from '@/components/common/ResponsiveVideo';
+import { GoogleDriveVideo } from '@/components/common/GoogleDriveVideo';
 import { cn } from '@/utils/cn';
 
 const SHOWCASE_ITEMS = [
@@ -115,19 +116,27 @@ export function PlatformExperienceSection() {
                   <div className="w-full aspect-video rounded-[12px] bg-slate-50 border border-slate-100 flex items-center justify-center transition-colors duration-300 group-hover:bg-slate-100 group-hover:border-slate-200 overflow-hidden relative">
                     <div className="absolute inset-0 bg-slate-900 opacity-0 group-hover:opacity-[0.05] transition-opacity duration-300 z-10 pointer-events-none" />
                     {item.video ? (
-                      <ResponsiveVideo
-                        key={`grid-video-${item.id}`}
-                        src={item.video}
-                        poster=""
-                        autoPlay={true}
-                        loop={true}
-                        muted={true}
-                        controls={false}
-                        playsInline={true}
-                        aspectRatio="16/9"
-                        rounded="none"
-                        className="w-full h-full object-cover absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
-                      />
+                      item.video.includes('drive.google.com') ? (
+                        <GoogleDriveVideo
+                          key={`grid-video-${item.id}`}
+                          url={item.video}
+                          className="w-full h-full object-cover absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        />
+                      ) : (
+                        <ResponsiveVideo
+                          key={`grid-video-${item.id}`}
+                          src={item.video}
+                          poster=""
+                          autoPlay={true}
+                          loop={true}
+                          muted={true}
+                          controls={false}
+                          playsInline={true}
+                          aspectRatio="16/9"
+                          rounded="none"
+                          className="w-full h-full object-cover absolute inset-0 z-0 opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                        />
+                      )
                     ) : (
                       <span className="text-[11px] font-mono text-slate-400 tracking-widest uppercase relative z-10">
                         Video Preview
@@ -209,20 +218,28 @@ export function PlatformExperienceSection() {
                 {/* 16:9 Video Area */}
                 <div className="w-full h-auto aspect-video rounded-[18px] bg-slate-50 border border-slate-100 flex items-center justify-center overflow-hidden flex-shrink-0 bg-slate-950">
                   {selectedItem.video ? (
-                    <ResponsiveVideo
-                      key={`modal-video-${selectedItem.id}`}
-                      src={selectedItem.video}
-                      poster=""
-                      autoPlay={true}
-                      loop={true}
-                      muted={false}
-                      controls={true}
-                      preload="metadata"
-                      playsInline={true}
-                      aspectRatio="16/9"
-                      rounded="none"
-                      className="w-full h-full object-contain"
-                    />
+                    selectedItem.video.includes('drive.google.com') ? (
+                      <GoogleDriveVideo
+                        key={`modal-video-${selectedItem.id}`}
+                        url={selectedItem.video}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <ResponsiveVideo
+                        key={`modal-video-${selectedItem.id}`}
+                        src={selectedItem.video}
+                        poster=""
+                        autoPlay={true}
+                        loop={true}
+                        muted={false}
+                        controls={true}
+                        preload="metadata"
+                        playsInline={true}
+                        aspectRatio="16/9"
+                        rounded="none"
+                        className="w-full h-full object-contain"
+                      />
+                    )
                   ) : (
                     <span className="text-[12px] font-mono text-slate-400 tracking-widest uppercase">
                       Video Player Placeholder
